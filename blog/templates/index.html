@@ -1,278 +1,181 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-
-  
-    <meta charset="utf-8"><title>Jubilantr</title>
-    
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Carousel Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
-    <style type="text/css">
-    
-    /* Large Desktop */
-    @media (min-width: 980px) {
-      body {
-       padding-top: 60px;
-       
-      }
-      .linediv-l {
-       border-right: 1px white solid;
-      }
-      .linediv-r {
-       border-left: 1px white solid;
-      }
-     }
-     
-     /* Landscape phones and down */
-     @media (max-width: 480px) {
-       .copy {
-         padding: 2.5% 10%;
-       }
-       .linediv-l {
-         border-bottom: 1px white solid;
-       }
-       .linediv-r {
-         border-top: 1px white solid;
-       }
-      }
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
 
-      /* All form factors */
-
-      /* Main body and headings */
-      body {
-        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-      }
-      .heading, .subheading {
-        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-        text-align: center;
-      }
-      p.lead {
-        padding-top: 1.5%;
-        font-size: 24px;
-        line-height: 30px;
-      }
-      p {
-        font-size: 18px;
-        line-height: 24px;
-      }
-
-      /* Video pitch and Action */
-      .pitch {
-        padding: 2.5% 0%;
-      }
-      .order {
-        padding: 2% 0%;
-      }
-      .actions {
-        background-color: #343434;
-        padding: 3% 0%;
-      }
-      .video, .thermometer, .order, .social, .statistics {
-        text-align: center;
-      }
-      .statistics h3, .statistics p {
-        color: white;
-      }
-
-      /* Marketing Copy and Footer */ 
-      .copy {
-        padding-top: 2.5%;
-        padding-bottom: 2.5%;
-        text-align: justify;
-      }
-      .asset {
-        padding: 2.5% 0%;
-      }
-      .footer {
-        color: #cccccc;
-        text-align: center; 
-      }
-      .footer p {
-        font-sie: 11px;
-      }
-      .footer a {
-        color: #ccccff;
-      }
-    
-    </style>
-    </head>
-    <body>
-
-     <!-- Mobile-friendlt navbar adapter from example. -->
-     <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
-     <div class="navbar navbar-inverse navbar-fixed-top">
-       <div class="navbar-inner">
-         <div class="container">
-           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <a class="brand" href="#">Jubilantr</a>
-           <div class="nav-collapse collapse">
-             <ul class="nav">
-               <li class="active"><a href="#">Home</a></li>
-               <li><a href="#about">About</a></li>
-               <li><a href="#contact">Contact</a></li>
-             </ul>
-           </div><!-- nav-collapse -->
+        <div class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+    	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+    	      <span class="icon-bar"></span>
+    	      <span class="icon-bar"></span>
+    	      <span class="icon-bar"></span>
+    	    </button>
+            <a class="navbar-brand" href="#">Project name</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
-         </div>
-       </div>
-     
-     <!-- We use row-fluid inside containers to achieve a resizable layout. -->
-     <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
-     <!-- http://stackoverflow.com/a/12270322 -->
-     <div class="container">
-       <!-- Font and paired font of .heading/.subheading and body from Google fonts -->
-       <!-- www.google.com/fonts/specimen/Ubuntu -->
-       <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
-       <div class="row-fluid heading">
-         <div class="span12">
-           <h1>Jubilantr</h1>
-         </div>
-       </div>
-       <div class="row-fluid subheading">
-         <div class="span12">
-				<p class="lead">deals that could make your day.</p>         
-         </div>
-       
-       </div>
-       <div class="row-fluid pitch">
-         <div class="span5 offset1 video">
-           <img class="img-polaroid" src="./images/img2.jpg">
-         </div>
+        </div>
 
-     <!-- We define a new 'actions' div to contain statistics, order, and share buttons. -->
-     <div class="span5 actions">
-       <div class="span8 offset2">
-         <div class="statistics">
-           <div class="span4">
-             <!-- linediv-l and linediv-r give dividing lines that look different in horizontal and vertical layouts, illustrating media queries. -->
-             <div class="linediv-l">
-             <h3>1000</h3> <p>backers</p>
-             </div>
-           </div>
-           <div class="span4">
-             <div class="linediv-c">
-              <h3>$6000</h3> <p>of $10,000</p>
-             </div>
-           </div>
-           <div class="span4">
-             <div class="linediv-r">
-             <h3>10</h3> <p>days left</p>
-             </div>
-           </div>
-         </div>
-       </div>
-       <div class="span10 offset1">
-         <!-- Bootstrap progress bar -->
-         <!-- http://twitter.github.io/bootstrap/components.html#progress -->
-         <div class="thermometer progress active">
-           <div class="bar bar-success" style="width: 60%;"></div>
-           <div class="bar bar-warning" style="width: 40%;" ></div>
-         </div>
-       </div>
-       <div class="span6 offset3 order">
-         <!-- Standard Bootstrap button.  -->
-         <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
-         <button class="btn btn-success btn-large">Preorder</button>
-       </div>
-       <div class="span8 offset2 social">
-          <!-- Social buttons are not included in default Bootstrap. -->      
-          <!-- See: http://noizwaves.github.io/bootstrap-social-buttons -->
-          <button class="btn btn-twitter"><i class="icon-twitter"> | Twitter</i></button>
-          <button class="btn btn-facebook"><i class="icon-facebook"> | Facebook</i></button>
-       </div>
-     </div>
+      </div>
     </div>
-    
-    <!-- Beyond this part the marketing copy begins. -->
-    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/text-align -->
-    <!-- http://twitter.github.io/bootstrap/base-css.html#images -->
-    <!-- http://placehold.it -->
-    <div class="row-fluid section1">
-     <div class="span5 offset1 asset">
-      <img class="img-polaroid" src="./images/img3.jpg">
-     </div>
-     <div class="span5 copy">
-      <p>
-        Jubilantor prvoides the best deals from your city to let you enjoy the best deals and make your weekend more better. Our partners 
-        welcome you with great deals on their page with insights of the venue, bash, food and what is special for you. Jubilantor makes the 
-        experience even more better with the single sign on using Google, Facebook and Twitter and user review and ratings matter that cost deals
-        some karma value and partners credibility can also be seen by the followers and their reviews. Even our navigator guides you to the venue.
-        So, rest won't understand but we are sure smart users would make smart move.
-     
-      </p>
-     </div>
-    </div>
-   
-   <div class="row-fluid section2">
-     <div class="span5 offset1 copy copy-right">
-       <p>
-        We know what you are excited about and what our partners capable of. So we make both the hands make clap with negotiating our partners
-        the customer needs and making them aware about your reviews, so that they best serve you to make you and their pockets happy. Jubilantr 
-        provides you a perfect experience on all the devices as per the current trend says we are planning to provide the best possible way to
-        make Jubilantr up and running on wearables and scannables like Google Glass.
-        
-       </p>
-     </div>
-     <div class="span5 asset">
-       <img class="img-polaroid" src="./images/img6.jpg">
-     </div>
-   </div>
 
-   <!-- For the FAQ, we introduce a little bit of JS, using the accordion.  -->
-   <!-- This brings in jquery.js and bootstrap.js as dependencies. -->
-   <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
-   <div class="row-fluid faq">
-     <div class="span10 offset1">
-       <h3>FAQ</h3>
-       <div class="accordion" id="accordion2">
-         <div class="accordion-group">
-           <div class="accordion-heading">
-             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                What does FAQ stand for?
-             </a>
-           </div>
-           <div id="collapseOne" class="accordion-body collapse">
-             <div class="accordion-inner">
-                Frequently Asked Question.
-             </div>
-           </div>
-         </div>
-         <div class="accordion-group">
-           <div class="accordion-heading">
-             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collpaseTwo">
-               What's a Frequently asked Question?
-             </a>
-           </div>
-           <div id="collapseTwo" class="accordion-body collapse">
-             <div class="accordion-inner">
-               A question which is commonly asked by users.
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-    
-   </div>
-   
-   <!-- Not cruicial, but we put this under a CC By-SA 3.0 license. -->
-   <!-- http://creativecommons.org/licenses/ -->
-   <div class="row-fluid footer">
-     <div class="span12">
-       <p>This work is licensed under
-         the <a href="http://creativecommons.org/licenses/by-sq/3.0/">CC By-SA 3.0 </a>, without all the cruft that would otherwise be put at
-         the bottom of the page. </p>
-     </div>
-   </div>
-  </div>
- </body></html>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img data-src="holder.js/1500x500/auto/#777:#7a7a7a/text:First slide" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-large btn-primary" href="#">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="holder.js/1500x500/auto/#777:#7a7a7a/text:Second slide" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="holder.js/1500x500/auto/#777:#7a7a7a/text:Third slide" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image img-circle pull-right" data-src="holder.js/512x512">
+        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image img-circle pull-left" data-src="holder.js/512x512">
+        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image img-circle pull-right" data-src="holder.js/512x512">
+        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../bootstrap/js/bootstrap.js"></script>
+    <script src="../../assets/js/holder.js"></script>
+  </body>
+</html>
