@@ -8,17 +8,18 @@
     <meta name="author" content="Chitrank" >
 
     <title>Home Navbar</title>
-
+	
     <!-- Bootstrap core CSS -->
     <link href="/static/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/static/css/carousel.css" rel="stylesheet">
+    
+    
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
-	
 	<!-- Modal 1 -->
               <!-- define the sign up modal finished -->  
 				  <!-- sign up modal -->
@@ -65,6 +66,7 @@
 					</div><!-- /.modal -->
 				
               <!-- sign in modal finish -->
+	
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -91,7 +93,6 @@
                 <li><a href="#contact">Contact</a></li> -->
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Popular</b><b class="caret"></b></a>
-                  
                   <ul class="dropdown-menu">
                     <li><a href="#">Friends</a></li>
                     <li><a href="#">Silver Class</a></li>
@@ -105,27 +106,22 @@
                   </ul>
                 </li>
               </ul>
+              
+              <!-- right side contents of the navbar -->
               <ul class="nav navbar-nav pull-right">
 			  <!-- calling sign up modal -->
-              <li><a data-toggle="modal" href="#signup" data-backdrop="true"><b>Sign Up</b></a></li>
-                          
-             
-				  <li><a data-toggle="modal" href="#signin" data-backdrop="true"><b>Sign In</b></a></li> 
+               <li><a data-toggle="modal" href="#signup"><b>Sign Up</b></a></li> 
+               <li><a data-toggle="modal" href="#signin"><b>Sign In</b></a></li> 
 				  
 				  <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-backdrop="true"><b>Help</b><b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Help</b><b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">Learn How to use TrackLeech</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li><a href="#">our Partners</a></li>
-                    
-                    
-                    <!-- <li class="divider"></li>
-                    <li class="nav-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li> -->
                   </ul>
-                  <li><button type="submit" class="btn navbar-form form-inline"><b>List your Transportation</b></button></li>
+              </li>
+              <li><button type="submit" class="btn navbar-form form-inline"><b>List your Transportation</b></button></li>
                 </li>
               </ul>
             </div>
@@ -143,7 +139,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/bootstrap.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+    
     <script src="/static/js/holder.js"></script>
   </body>
 </html>

@@ -7,6 +7,8 @@ admin.autodiscover()
 urlpatterns = patterns('',#(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root': 'static'})
     # Examples:
     url(r'^$', 'trackleech.blog.views.home', name='home'), # {'document_root':settings.STATIC_ROOT}
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+           { 'document_root': '/home/chitrank/Documents/Google_App_Engine/startup-repo/trackleech/static' }),
     # r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root': 'static'}
     # url(r'','',)
     # url(r'^trackleech/', include('trackleech.foo.urls')),

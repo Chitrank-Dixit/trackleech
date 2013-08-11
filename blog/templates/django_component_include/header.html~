@@ -8,16 +8,65 @@
     <meta name="author" content="Chitrank" >
 
     <title>Home Navbar</title>
-
+	
     <!-- Bootstrap core CSS -->
     <link href="/static/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/static/css/carousel.css" rel="stylesheet">
+    
+    
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
+	<!-- Modal 1 -->
+              <!-- define the sign up modal finished -->  
+				  <!-- sign up modal -->
+				  <!-- Modal -->
+					<div class="modal fade" id="signup">
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+						...
+						</div>
+						<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+              <!-- sign up modal finish -->
+	  
+	  
+	  <!-- Modal 2 -->
+		<!--Defining sign in modal -->
+				  <!-- Modal -->
+				  <div class="modal fade" id="signin">
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+						...
+						</div>
+						<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+					</div><!-- /.modal -->
+				
+              <!-- sign in modal finish -->
+	
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -44,7 +93,6 @@
                 <li><a href="#contact">Contact</a></li> -->
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Popular</b><b class="caret"></b></a>
-                  
                   <ul class="dropdown-menu">
                     <li><a href="#">Friends</a></li>
                     <li><a href="#">Silver Class</a></li>
@@ -58,57 +106,22 @@
                   </ul>
                 </li>
               </ul>
+              
+              <!-- right side contents of the navbar -->
               <ul class="nav navbar-nav pull-right">
+			  <!-- calling sign up modal -->
+               <li><a data-toggle="modal" href="#signup"><b>Sign Up</b></a></li> 
+               <li><a data-toggle="modal" href="#signin"><b>Sign In</b></a></li> 
 				  
-				  <!-- sign up modal -->
-				  <div class="modal fade" id="myModal">
-                <div class="modal-header">
-                    <button class="close" data-dismiss="modal">×</button>
-                    <h3>Modal header</h3>
-                </div>
-                <div class="modal-body">
-                      <p>One fine body…</p>
-                </div>
-                <div class="modal-footer">
-                   <a href="#" class="btn" data-dismiss="modal">Close</a>
-                   <a href="#" class="btn btn-primary">Save changes</a>
-                </div>
-              </div>
-              <!-- sign up modal finish -->
-              <!-- calling sign up modal -->
-              <li><a data-toggle="modal" href="#myModal"><b>Sign Up</b></a></li>
-              <!-- calling sign up modal finished -->
-             
-				  <li><a data-toggle="modal" href="#myModal"><b>Sign In</b></a></li>
-				  <!-- sign in modal -->
-				  <div class="modal fade" id="myModal">
-                <div class="modal-header">
-                    <button class="close" data-dismiss="modal">×</button>
-                    <h3>Modal header</h3>
-                </div>
-                <div class="modal-body">
-                      <p>One fine body…</p>
-                </div>
-                <div class="modal-footer">
-                   <a href="#" class="btn" data-dismiss="modal">Close</a>
-                   <a href="#" class="btn btn-primary">Save changes</a>
-                </div>
-              </div>
-              <!-- sign in modal finish -->
 				  <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Help</b><b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">Learn How to use TrackLeech</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li><a href="#">our Partners</a></li>
-                    
-                    
-                    <!-- <li class="divider"></li>
-                    <li class="nav-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li> -->
                   </ul>
-                  <li><button type="submit" class="btn navbar-form form-inline"><b>List your Transportation</b></button></li>
+              </li>
+              <li><button type="submit" class="btn navbar-form form-inline"><b>List your Transportation</b></button></li>
                 </li>
               </ul>
             </div>
@@ -119,7 +132,7 @@
       </div>
     </div>
 
-
+	
     
     <!-- Bootstrap core JavaScript
     ================================================== -->

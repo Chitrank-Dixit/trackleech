@@ -1,3 +1,4 @@
+
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
@@ -15,7 +16,7 @@ body {
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
   position: relative;
-  z-index: 15;
+  z-index: 10;
 }
 
 
@@ -39,7 +40,7 @@ body {
 .carousel .item {
   height: 500px;
 }
-.carousel-inner > .item > img {
+.carousel img {
   position: absolute;
   top: 0;
   left: 0;
