@@ -20,6 +20,16 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
+  <!-- Facebook Connect trans-startup app code starts-->
+  <div id="fb-root"></div>
+	<script>(function(d, s, id) {
+  		var js, fjs = d.getElementsByTagName(s)[0];
+  			if (d.getElementById(id)) return;
+  			js = d.createElement(s); js.id = id;
+  			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=578682558841246";
+  			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+  <!-- Facebook Connect trans-startup app code ends
 	<!-- Modal 1 -->
               <!-- define the sign up modal finished -->  
 				  <!-- sign up modal -->
@@ -29,14 +39,28 @@
 					<div class="modal-content">
 						<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">Modal title</h4>
+						<h4 class="modal-title">TrackLeech Sign Up</h4>
 						</div>
 						<div class="modal-body">
-						...
+							
+							<form class="navbar-form form-inline" align="left">
+								<input type="text" placeholder="username" class="form-control" style="width: 200px;"> 
+								<!-- Fb Login --> <div class="fb-login-button pull-right" data-width="400">Login with Facebook</div><!-- Add FB Button Here --> <br><br>
+								<input type="text" placeholder="email" class="form-control" style="width: 200px;"> <!-- Add Google Button Here --> <br><br>
+								<input type="password" placeholder="password" class="form-control" style="width: 200px;"> <!-- Add Twitter Button Here --><br><br>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Sign Up</button><br><br>
+								<a data-toggle="modal" data-dismiss="modal" href="#signin" >Already a member ? Sign In</a>
+							</form>
+							<div class="pull-right">
+																							
+															
+							</div>
 						</div>
 						<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Sign Up</button>
+						<a data-toggle="modal" href="#signin" >Already a member ? Sign In</a> -->
 						</div>
 						</div><!-- /.modal-content -->
 					</div><!-- /.modal-dialog -->
@@ -52,14 +76,27 @@
 					<div class="modal-content">
 						<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">Modal title</h4>
+						<h4 class="modal-title" align="center">TrackLeech Sign In</h4>
 						</div>
 						<div class="modal-body">
-						...
+						<form class="navbar-form form-inline" align="center">
+								
+								<!-- FB login --> <div class="fb-login-button" data-width="400">Sign in with Facebook</div><br><br><br>
+								OR
+								<br><br><br> 
+								<input type="text" placeholder="username or email" class="form-control" style="width: 400px; " size="100"><br><br>
+								<input type="password" placeholder="password" class="form-control" style="width: 400px;" size="100"><br>
+								<input type="checkbox" class="form-control" style="width: 12px;" name="Remember me"> Remember me</input>
+								<a href="#">Forgot Password</a><br>							
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Sign In</button><br><br>
+								<a data-toggle="modal" data-dismiss="modal" href="#signup">Not a member ? Sign Up</a>
+								
+							</form>
 						</div>
 						<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button> -->
 						</div>
 						</div><!-- /.modal-content -->
 					</div><!-- /.modal-dialog -->
@@ -77,7 +114,7 @@
     	      <span class="icon-bar"></span>
     	      <span class="icon-bar"></span>
     	    </button>
-            <a class="navbar-brand" href="#">TrackLeech</a>
+            <a class="navbar-brand" href="../search.html">TrackLeech</a>
             
             <div class="nav-collapse collapse">
               <ul class="nav navbar-nav">
