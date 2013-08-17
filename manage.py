@@ -10,5 +10,9 @@ except ImportError:
 
 import settings
 
+import os
+project = os.path.basename(os.path.dirname(__file__))
+os.environ['DJANGO_SETTINGS_MODULE'] = '%s.settings' % project
+
 if __name__ == "__main__":
     execute_manager(settings)
