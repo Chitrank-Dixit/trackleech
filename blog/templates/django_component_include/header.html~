@@ -14,7 +14,12 @@
 
     <!-- Custom styles for this template -->
     <link href="/static/css/carousel.css" rel="stylesheet">
+    <style type="text/css">
+		li.not_show {
+			visibility:hidden;		
+		}    
     
+    </style>
     
   </head>
 <!-- NAVBAR
@@ -46,7 +51,7 @@
 								<!-- Add Google Button Here -->
 								<!-- Add Twitter Button Here -->
 								OR
-							<form class="navbar-form form-inline" action="/signup/" method="get">
+							<form class="navbar-form form-inline" action="/signup/" method="post">
 								{% csrf_token %}
 								<input type="text" name="username" value="" placeholder="username" class="form-control" style="width: 400px;" size="100"><br><br> 
 								<input type="text" name="email" value="" placeholder="email" class="form-control" style="width: 400px;" size="100">  <br><br>
@@ -85,17 +90,17 @@
 						<h4 class="modal-title" align="center">TrackLeech Sign In</h4>
 						</div>
 						<div class="modal-body">
-						<form class="navbar-form form-inline" align="center">
-								
+						<form class="navbar-form form-inline" align="center" action="/signin/" method="post">
+								{% csrf_token %}
 								<!-- FB login --> <div class="fb-login-button" data-width="400">Sign in with Facebook</div><br><br><br>
 								OR
 								<br><br><br> 
-								<input type="text" placeholder="username or email" class="form-control" style="width: 400px; " size="100"><br><br>
-								<input type="password" placeholder="password" class="form-control" style="width: 400px;" size="100"><br>
+								<input type="text" name="username" value="" placeholder="username or email" class="form-control" style="width: 400px; " size="100"><br><br>
+								<input type="password" name="password" value="" placeholder="password" class="form-control" style="width: 400px;" size="100"><br>
 								<input type="checkbox" class="form-control" style="width: 12px;" name="Remember me" > Remember me</input>
 								<a href="#">Forgot Password</a><br>							
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Sign In</button><br><br>
+								<button type="submit" class="btn btn-primary" value="signedin">Sign In</button><br><br>
 								<a data-toggle="modal" data-dismiss="modal" href="#signup">Not a member ? Sign Up</a>
 								
 							</form>
@@ -154,7 +159,8 @@
               <ul class="nav navbar-nav pull-right">
 			  <!-- calling sign up modal -->
                <li><a data-toggle="modal" href="#signup"><b>Sign Up</b></a></li> 
-               <li><a data-toggle="modal" href="#signin"><b>Sign In</b></a></li> 
+               <li><a data-toggle="modal" href="#signin"><b>Sign In</b></a></li>
+              <!--  <li class="not_show"><a href="#" ><b>Sign Out</b></a></li> -->
 				  
 				  <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Help</b><b class="caret"></b></a>

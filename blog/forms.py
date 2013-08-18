@@ -5,3 +5,9 @@ class UserForm(ModelForm):
     class Meta:
         model = User
         fields = ('username','email','password')
+
+
+class SignedUserForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ('username','password')
