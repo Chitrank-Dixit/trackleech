@@ -1,16 +1,19 @@
 # Create your views here.
 from django.shortcuts import render_to_response, render
 from forms import UserForm , SignedUserForm
-from django.contrib.auth import login
+from django.contrib import auth
+from django.contrib.auth import login , logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-from blog.models import posts
 from django.template import RequestContext
+# sending mail usin Django
+from django.core.mail import send_mail
 
 def home(request):
     return render_to_response('index.html',{}, context_instance=RequestContext(request))
 
 def signup(request):
+    send_email=''
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
@@ -18,8 +21,9 @@ def signup(request):
             new_user.save()
             new_user.backend='django.contrib.auth.backends.ModelBackend'
             login(request,new_user)
+            send_email=request.POST.get('email')
             # redirect, or however you may want to get to the main view
-            return HttpResponseRedirect('search.html')
+            return HttpResponseRedirect('index.html')
         else:
             form = UserForm()
         
@@ -31,40 +35,35 @@ def signup(request):
             new_user.save()
             new_user.backend='django.contrib.auth.backends.ModelBackend'
             login(request,new_user)
+            send_email=request.GET.get('email')
             # redirect, or however you may want to get to the main view
-            return HttpResponseRedirect('search.html')
+            return HttpResponseRedirect('index.html')
         else:
             form = UserForm()
-        
-    return render(request,'search.html',{'form': form})
+    #send_mail('Subject here', 'Here is the message.', 'chitrankdixit@gmail.com',
+    #[send_email], fail_silently=False)    
+    return render(request,'index.html',{'form':form})
+
 
 def signin(request):
-    if request.method == 'POST':
-        form = SignedUserForm(request.POST)
-        if form.is_valid():
-            existing_user = User.objects.authenticate(**form.cleaned_data)
-            #existing_user.save()
-            existing_user.backend='django.contrib.auth.backends.ModelBackend'
-            login(request,existing_user)
-            # redirect, or however you may want to get to the main view
-            return HttpResponseRedirect('index.html')
-        else:
-            form = SignedUserForm()
+    username=request.POST.get('username')
+    password=request.POST.get('password')
+    user = auth.authenticate(username=username, password=password)
+    if user is not None:
+        auth.login(request,user)
+        return HttpResponseRedirect('/blog/home')
+    elif user is None:
+        return HttpResponseRedirect('/blog/search')
         
         
-    elif request.method == 'GET':
-        form = SignedUserForm(request.GET)
-        if form.is_valid():
-            existing_user = User.objects.authenticate(**form.cleaned_data)
-            #existing_user.save()
-            existing_user.backend='django.contrib.auth.backends.ModelBackend'
-            login(request,existing_user)
-            # redirect, or however you may want to get to the main view
-            return HttpResponseRedirect('index.html')
-        else:
-            form = SignedUserForm()
-        
-    return render(request,'index.html',{'form': form})
+    
+    
+    
+def signout(request):
+    logout(request)
+    return render_to_response('index.html',{}, context_instance=RequestContext(request))
+ 
+
 '''
 def signup(request):
     username=email=password=''
@@ -76,6 +75,13 @@ def signup(request):
         user.save()
     return render_to_response('search.html',{'state':state, 'username': username})
 '''    
+
+
+def authorize(request):
+    if not request.user.is_authenticated():
+        return render_to_response('index.html', {'inhalt': 'Not loggged in'},context_instance=RequestContext(request))
+    else:
+        return render_to_response('index.html', {'inhalt': 'Succesfully loged in'},context_instance=RequestContext(request))
 
 def search(request):
     return render_to_response('search.html',{}, context_instance=RequestContext(request))

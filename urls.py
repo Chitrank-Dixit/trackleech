@@ -24,7 +24,9 @@ urlpatterns = patterns('',#(r'^static/(?P<path>.*)$','django.views.static.serve'
     url(r'^blog/', 'trackleech.blog.views.search', name='search'),
     url(r'^blog/', 'trackleech.blog.views.profile', name='profile'),
     url(r'^signup/', 'trackleech.blog.views.signup',name='signup'),
-    url(r'^signin/', 'trackleech.blog.views.signup',name='signin'),
+    url(r'^signin/', 'trackleech.blog.views.signin',name='signin'),
+    url(r'^signout/', 'trackleech.blog.views.signout',name = 'signout'),
+    
     # url(r'^blog/', 'trackleech.blog.views.search', name='search'),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': '/home/chitrank/Documents/Google_App_Engine/startup-repo/trackleech/static' }),
     # r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root': 'static'}

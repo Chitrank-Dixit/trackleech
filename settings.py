@@ -101,7 +101,16 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
-AUTH_USER_MODEL = 'blog.signup'
+# for checking sessions
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.request',
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+)
+
+AUTH_USER_MODEL = 'blog.signup' #  'blog.signin
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',

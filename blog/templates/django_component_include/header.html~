@@ -11,6 +11,7 @@
 	
     <!-- Bootstrap core CSS -->
     <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/static/css/carousel.css" rel="stylesheet">
@@ -20,7 +21,48 @@
 		}    
     
     </style>
+    <script type="text/javascript" >
+		
+		/* typeahead.js autocomplete wizard script*/
+	    $(document).ready(function($) {
+        // Workaround for bug in mouse item selection
+        $.fn.typeahead.Constructor.prototype.blur = function() {
+            var that = this;
+            setTimeout(function () { that.hide() }, 250);
+        };
+ 
+        $('#input').typeahead({
+            source: function(query, process) {
+                return ["Deluxe Bicycle", "Super Deluxe Trampoline", "Super Duper Scooter"];
+            }
+        });
+    })
     
+    /* Validate Signup Details */
+    function signup_username()
+    {
+       var x=document.forms["signup_form"]["username"].value;
+       if ((x==null || x=="")) 
+       {
+          document.Error("<p> Please fill in the Sign up details.. </p>")
+          
+          return false;
+       }
+		}
+    function signupForm()
+    {
+       var x=document.forms["signup_form"]["username"].value;
+       var y=document.forms["signup_form"]["email"].value;
+       var z=document.forms["signup_form"]["password"].value;
+       if ((x==null || x=="") || (y==null || y=="") || (z==null || z=="")) 
+       {
+          document.Error("<p> Please fill in the Sign up details.. </p>")
+          
+          return false;
+       }
+		}
+
+	 </script>
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -33,7 +75,8 @@
   			js = d.createElement(s); js.id = id;
   			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=578682558841246";
   			fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));</script>
+			}(document, 'script', 'facebook-jssdk'));
+	</script>
   <!-- Facebook Connect trans-startup app code ends
 	<!-- Modal 1 -->
               <!-- define the sign up modal finished -->  
@@ -51,9 +94,9 @@
 								<!-- Add Google Button Here -->
 								<!-- Add Twitter Button Here -->
 								OR
-							<form class="navbar-form form-inline" action="/signup/" method="post">
+							<form name="signup_form"class="navbar-form form-inline" action="/signup/" method="post" onsubmit="return signupForm();">
 								{% csrf_token %}
-								<input type="text" name="username" value="" placeholder="username" class="form-control" style="width: 400px;" size="100"><br><br> 
+								<input type="text" name="username" value="" placeholder="username" class="form-control" style="width: 400px;" size="100" onchange='return signup_username();'><br><br> 
 								<input type="text" name="email" value="" placeholder="email" class="form-control" style="width: 400px;" size="100">  <br><br>
 								<input type="password" name="password" value="" placeholder="password" class="form-control" style="width: 400px;" size="100"> <br><br>
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -62,9 +105,7 @@
 							</form>
 							
 							<div class="pull-right">
-								{% if form.errors %}
-        							<p class="error">User or password incorrect</p>
-      						{% endif %}																							
+																													
 															
 							</div>
 						</div>
@@ -90,13 +131,15 @@
 						<h4 class="modal-title" align="center">TrackLeech Sign In</h4>
 						</div>
 						<div class="modal-body">
-						<form class="navbar-form form-inline" align="center" action="/signin/" method="post">
-								{% csrf_token %}
-								<!-- FB login --> <div class="fb-login-button" data-width="400">Sign in with Facebook</div><br><br><br>
+								
+								
+								<!-- FB login --> <div class="fb-login-button" align="center" data-width="400">Sign in with Facebook</div><br><br><br>
 								OR
 								<br><br><br> 
-								<input type="text" name="username" value="" placeholder="username or email" class="form-control" style="width: 400px; " size="100"><br><br>
-								<input type="password" name="password" value="" placeholder="password" class="form-control" style="width: 400px;" size="100"><br>
+						<form name="signin_form" class="navbar-form form-inline" action="/signin/" method="post" align="center">
+								{% csrf_token %}
+								<input type="text" name="username" id="username" value="" placeholder="username or email" class="form-control" style="width: 400px; " size="100"><br><br>
+								<input type="password" name="password" id="password" value="" placeholder="password" class="form-control" style="width: 400px;" size="100"><br>
 								<input type="checkbox" class="form-control" style="width: 12px;" name="Remember me" > Remember me</input>
 								<a href="#">Forgot Password</a><br>							
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -108,6 +151,9 @@
 						<div class="modal-footer">
 						<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="button" class="btn btn-primary">Save changes</button> -->
+						{% if form.errors %}
+        							<p class="error">User or password incorrect</p>
+      						{% endif %}		
 						</div>
 						</div><!-- /.modal-content -->
 					</div><!-- /.modal-dialog -->
@@ -131,7 +177,7 @@
               <ul class="nav navbar-nav">
 				<li>
 					<form class="navbar-form form-inline pull-right" action="{% url search %}">
-					<input type="text" placeholder="Where are you going ?" class="form-control" style="width: 200px;">
+   				<input type="text" placeholder="Where are you going ?" class="form-control" style="width: 200px;" id="input" data-provide="typeahead">
 					<button type="submit" class="btn"><b>Search</b></button>
 					</form>
 				</li>
@@ -157,11 +203,20 @@
               
               <!-- right side contents of the navbar -->
               <ul class="nav navbar-nav pull-right">
-			  <!-- calling sign up modal -->
-               <li><a data-toggle="modal" href="#signup"><b>Sign Up</b></a></li> 
-               <li><a data-toggle="modal" href="#signin"><b>Sign In</b></a></li>
-              <!--  <li class="not_show"><a href="#" ><b>Sign Out</b></a></li> -->
-				  
+			  {% if user.is_authenticated %}
+			  		<!-- calling sign up modal -->
+			  		<li class="dropdown">
+			  			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Hello {{ user.username }}</b><b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Learn How to use TrackLeech</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="/signout/">Sign Out</a></li>
+						</ul>
+					</li>
+              {% else %}
+              		<li><a data-toggle="modal" href="#signup"><b>Sign Up</b></a></li> 
+					<li><a data-toggle="modal" href="#signin"><b>Sign In</b></a></li>
+			  {% endif %}	
 				  <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Help</b><b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -171,6 +226,7 @@
                   </ul>
               </li>
               <li><button type="submit" class="btn navbar-form form-inline"><b>List your Transportation</b></button></li>
+              <li>{{ start_session }}</li>
                 </li>
               </ul>
             </div>
@@ -188,7 +244,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/bootstrap.js"></script>
-    
+    <script src="/static/js/typeahead.js"></script>
+    <script src="/static/js/typeahead.min.js"></script>
     <script src="/static/js/holder.js"></script>
   </body>
 </html>
