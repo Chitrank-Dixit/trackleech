@@ -64,25 +64,6 @@ def signout(request):
     return render_to_response('index.html',{}, context_instance=RequestContext(request))
  
 
-'''
-def signup(request):
-    username=email=password=''
-    if request.POST:
-        username = request.POST.get('username')
-        email    = request.POST.get('email')
-        password = request.POST.get('password')
-        user = User.objects.create_user(username=username, email=email, password=password)
-        user.save()
-    return render_to_response('search.html',{'state':state, 'username': username})
-'''    
-
-
-def authorize(request):
-    if not request.user.is_authenticated():
-        return render_to_response('index.html', {'inhalt': 'Not loggged in'},context_instance=RequestContext(request))
-    else:
-        return render_to_response('index.html', {'inhalt': 'Succesfully loged in'},context_instance=RequestContext(request))
-
 def search(request):
     return render_to_response('search.html',{}, context_instance=RequestContext(request))
     

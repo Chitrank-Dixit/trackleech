@@ -22,22 +22,10 @@
     
     </style>
     <script type="text/javascript" >
+		$('#async_typeahead').typeahead({
+    computed: async,
+		});
 		
-		/* typeahead.js autocomplete wizard script*/
-	    $(document).ready(function($) {
-        // Workaround for bug in mouse item selection
-        $.fn.typeahead.Constructor.prototype.blur = function() {
-            var that = this;
-            setTimeout(function () { that.hide() }, 250);
-        };
- 
-        $('#input').typeahead({
-            source: function(query, process) {
-                return ["Deluxe Bicycle", "Super Deluxe Trampoline", "Super Duper Scooter"];
-            }
-        });
-    })
-    
     /* Validate Signup Details */
     function signup_username()
     {
@@ -133,7 +121,7 @@
 						<div class="modal-body">
 								
 								
-								<!-- FB login --> <div class="fb-login-button" align="center" data-width="400">Sign in with Facebook</div><br><br><br>
+								<!-- FB login --> <center> <div class="fb-login-button" data-width="400">Sign in with Facebook</div><br><br><br> </center>
 								OR
 								<br><br><br> 
 						<form name="signin_form" class="navbar-form form-inline" action="/signin/" method="post" align="center">
@@ -177,7 +165,7 @@
               <ul class="nav navbar-nav">
 				<li>
 					<form class="navbar-form form-inline pull-right" action="{% url search %}">
-   				<input type="text" placeholder="Where are you going ?" class="form-control" style="width: 200px;" id="input" data-provide="typeahead">
+   				<input type="text" placeholder="Where are you going ?" class="form-control" style="width: 200px;" id="async_typeahead" data-provide="typeahead">
 					<button type="submit" class="btn"><b>Search</b></button>
 					</form>
 				</li>
@@ -246,6 +234,7 @@
     <script src="/static/js/bootstrap.js"></script>
     <script src="/static/js/typeahead.js"></script>
     <script src="/static/js/typeahead.min.js"></script>
+    <script src="/static/js/typeahead_mysite.js"></script>
     <script src="/static/js/holder.js"></script>
   </body>
 </html>
