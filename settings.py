@@ -110,7 +110,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
 )
 
-AUTH_USER_MODEL = 'blog.signup' #  'blog.signin
+AUTH_USER_MODEL = 'blog.signup' #  'blog.signin' or 'mongo_auth.MongoUser'
+
+# MONGOENGINE_USER_DOCUMENT = 'mongoengine.django.auth.User'
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -122,6 +124,7 @@ MIDDLEWARE_CLASSES = (
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
+    #'mongoengine.django.auth.MongoEngineBackend',
 )
 
 ROOT_URLCONF = 'trackleech.urls'
@@ -140,6 +143,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'mongoengine.django.mongo_auth',
     #'trackleech.blog'
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
