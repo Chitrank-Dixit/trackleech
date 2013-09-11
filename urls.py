@@ -22,7 +22,7 @@ urlpatterns = patterns('',#(r'^static/(?P<path>.*)$','django.views.static.serve'
     # Examples:
     url(r'^$', 'trackleech.blog.views.home', name='home'), # {'document_root':settings.STATIC_ROOT}
     url(r'^blog/', 'trackleech.blog.views.search', name='search'),
-    url(r'^blog/', 'trackleech.blog.views.profile', name='profile'),
+    url(r'^profile/', 'trackleech.blog.views.profile', name='profile'),
     url(r'^signup/', 'trackleech.blog.views.signup',name='signup'),
     url(r'^signin/', 'trackleech.blog.views.signin',name='signin'),
     url(r'^signout/', 'trackleech.blog.views.signout',name = 'signout'),

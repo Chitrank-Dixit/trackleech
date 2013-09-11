@@ -77,6 +77,7 @@ STATICFILES_DIRS = (
     './assets',
     './bootstrap',
     './typeahead_js',
+    './bootstrap2',
     
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.

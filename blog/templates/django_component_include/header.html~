@@ -204,8 +204,8 @@
 							<li><a href="#">Your Trips</a></li>
 							<li><a href="#">Inbox</a></li>
 							<li><a href="#">Account</a></li>
-							<li><a href="#">Edit Profile</a></li>
 							<li><a href="/signout/">Sign Out</a></li>
+							
 							
 						</ul>
 					</li>

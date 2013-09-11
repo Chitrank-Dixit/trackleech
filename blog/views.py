@@ -51,9 +51,9 @@ def signin(request):
     user = auth.authenticate(username=username, password=password)
     if user is not None:
         auth.login(request,user)
-        return HttpResponseRedirect('/blog/home')
-    elif user is None:
-        return HttpResponseRedirect('/blog/search')
+        return render_to_response('index.html',{}, context_instance=RequestContext(request))# HttpResponseRedirect('/blog/profile/')  '/blog/profile/'
+    elif user is None: 
+        return render_to_response('index.html',{}, context_instance=RequestContext(request))# HttpResponseRedirect('home')  # '/blog/home/'
         
         
     
